@@ -1,36 +1,46 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-         pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>登录页</title>
-    <!--响应式布局，自适应物理配置，initial-scale设置为1：完全不缩放-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--引入Bootstrap样式-->
-    <link rel="stylesheet" type="text/css" href="<c:url value="css/bootstrap-4.1.2/bootstrap.css"/> "/>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <style>
+        body{padding-top: 50px;}
+        .starter {padding: 40px 15px; text-align: center;}
+    </style>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap-4.1.2/bootstrap.min.js"></script>
 </head>
 <body>
-<!--navbar指定此nav为导航栏，navbar-inverse指定导航的样式，navbar-fixed-top指定导航栏的位置-->
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <!--container 导航栏容器-->
+<nav class="navbar navbar-inverse nav-fixed-top" role="navigation">
     <div class="container">
-        <!--navbar-header 头部，设置项目名称或logo-->
         <div class="navbar-header">
-            <!--设置项目名称或logo-->
-            <a href="#" class="navbar-brand">Project name</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">Project Name</a>
         </div>
-        <!--其他导航，指定几行几个内容-->
-        <div class="collapse navbar-collapse" id="navbar">
+        <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <!--active 表示默认选中，添加a标签，代表可选中-->
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </div>
     </div>
 </nav>
+
+<div class="container">
+    <div class="starter">
+        <h1>Bootstrap starter template</h1>
+        <p class="lead">Hello,Bootstrap</p>
+    </div>
+</div>
 </body>
 </html>
