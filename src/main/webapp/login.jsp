@@ -98,7 +98,6 @@
 <script>
     function Toregister(){
         var th = document.form2;
-        alert(th.username.value);
         th.action = "<%=path%>/loginProcess";
         th.submit;
     }

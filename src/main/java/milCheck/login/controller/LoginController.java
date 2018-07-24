@@ -40,6 +40,7 @@ public class LoginController {
         }
         */
         System.out.println(userName);
+        mav = new ModelAndView("index");
         return mav;
     }
 }
