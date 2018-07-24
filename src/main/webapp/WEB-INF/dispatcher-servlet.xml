@@ -34,4 +34,6 @@
 
     <!-- 自动扫描装配 -->
     <context:component-scan base-package="milCheck.qualityHandler.controller"/>
+
+    <context:component-scan base-package="milCheck.login.controller"/>
 </beans>
