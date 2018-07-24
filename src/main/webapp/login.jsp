@@ -12,7 +12,7 @@
         .starter {padding: 40px 15px; text-align: center;}
     </style>
 
-    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery/jquery-1.11.3.min.js"></script>
     <script src="js/bootstrap-4.1.2/bootstrap.min.js"></script>
 </head>
 <body>
