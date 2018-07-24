@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>登录页</title>
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-3.3.0/bootstrap.min.css">
     <style>
         body{padding-top: 50px;}
         .starter {padding: 40px 15px; text-align: center;}
