@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <!--为com.mjl.model.User设置别名 User 方便调用-->
-    <typeAliases>
-        <typeAlias alias="User" type="com.mjl.model.User"/>
-    </typeAliases>
+    <!-- development:开发模式     work:工作模式 -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="jdbc:mysql://localhost:3306/ssm" />
+                <property name="username" value="root" />
+                <property name="password" value="1234" />
+            </dataSource>
+        </environment>
+    </environments>
 
+    <mappers>
+        <mapper class="milCheck/login/dao/LoginMapper.xml"/>
+    </mappers>
 
 </configuration>
