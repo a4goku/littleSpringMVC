@@ -39,4 +39,5 @@
         <!-- 指定sql会话工厂-->
         <property name="sqlSessionFactory" ref="sessionFactory"></property>
     </bean>
+
 </beans>
