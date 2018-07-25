@@ -1,8 +1,9 @@
 package milCheck.user.dao;
 
 import milCheck.user.pojo.User;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface IUserDAO {
-    public User getUserInfoByName(String username);
-
+    User getUserInfoByName(String username);
 }

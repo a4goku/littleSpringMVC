@@ -11,11 +11,15 @@
                            http://www.springframework.org/schema/mvc/spring-mvc.xsd">
     <!--此文件负责整个mvc中的配置-->
 
-    <!--启用spring的一些annotation -->
-    <context:annotation-config/>
+    <!-- 扫描web相关的bean -->
+    <context:component-scan base-package="milCheck.user.controller"/>
 
+    <!-- 开启SpringMVC注解模式 -->
     <!-- 配置注解驱动 可以将request参数与绑定到controller参数上 -->
     <mvc:annotation-driven/>
+
+    <!-- 静态资源默认servlet配置 -->
+    <mvc:default-servlet-handler/>
 
     <!--静态资源映射-->
     <!--本项目把静态资源放在了webapp的statics目录下，资源映射如下-->
@@ -31,9 +35,4 @@
         <property name="suffix" value=".jsp"/>
         <property name="exposeContextBeansAsAttributes" value="true"/>
     </bean>
-
-    <!-- 自动扫描装配 -->
-    <context:component-scan base-package="milCheck.qualityHandler.controller"/>
-
-    <context:component-scan base-package="milCheck.login.controller"/>
 </beans>
