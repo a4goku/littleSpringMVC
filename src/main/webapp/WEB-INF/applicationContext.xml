@@ -26,45 +26,17 @@
         <property name="password" value="${jdbc.password}"></property>
     </bean>
 
-    <!-- 1.1 关联jdbc.properties -->
-    <context:property-placeholder location="WEB-INF/config/jdbc.properties"/>
-
     <!-- 02.配置SessionFactory -->
     <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="configLocation" value="WEB-INF/config/config.xml"></property>
         <property name="dataSource" ref="dataSource"></property>
+        <property name="configLocation" value="WEB-INF/config/mybatis-config.xml"></property>
     </bean>
 
-    <!-- 03.生成dao代理對象 -->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="sqlSessionFactoryBeanName" value="sessionFactory"></property>
-        <property name="basePackage" value="cn.jpp.dao"></property>
+    <!--3创建一个userDao-->
+    <bean id="userDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <!--指定映射文件 -->
+        <property name="mapperInterface" value="milCheck.user.dao.IUserDAO"></property>
+        <!-- 指定sql会话工厂-->
+        <property name="sqlSessionFactory" ref="sessionFactory"></property>
     </bean>
-
-    <!--04.配置service-->
-    <bean id="userService" class="cn.jpp.service.UserInfoServiceImpl">
-        <property name="dao" ref="IUserInfoDAO"></property>
-    </bean>
-
-    <!-- 05.配置action -->
-    <bean id="/userAction.do" class="cn.jpp.controller.UserInfoController">
-        <property name="service" ref="userService"></property>
-    </bean>
-
-    <!-- 06.配置事务管理器 -->
-    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource"></property>
-    </bean>
-    <!-- 07.配置开启事务操作 -->
-    <tx:advice id="txAdvice" transaction-manager="transactionManager">
-        <tx:attributes>
-            <!--指定在连接方法上应用的事务属性 -->
-            <tx:method name="add*" isolation="DEFAULT" propagation="REQUIRED"/>
-        </tx:attributes>
-    </tx:advice>
-    <!-- aop配置 -->
-    <aop:config>
-        <aop:pointcut expression="execution(* *..service.*.*(..))" id="stockPointcut"/>
-        <aop:advisor advice-ref="txAdvice" pointcut-ref="stockPointcut"/>
-    </aop:config>
 </beans>
