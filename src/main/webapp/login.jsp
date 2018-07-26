@@ -17,7 +17,6 @@
 <div>
     <div class="jumbotron text-info bg-light jumheight1">
         <h1>工时管理系统</h1>
-        <p><%=path%></p>
     </div>
     <!-- 轮播图 -->
     <!-- 指示符 -->
