@@ -1,24 +1,27 @@
-package milCheck.user.service;
+package com.milCheck.service;
 
-import milCheck.user.dao.IUserDAO;
-import milCheck.user.pojo.User;
-import milCheck.utils.DBTools;
+import com.milCheck.model.User;
+import com.milCheck.utils.DBTools;
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service("userService")
 public class UserService implements IUserService{
-    private IUserDAO dao;
+    //private IUserMapper dao;
 
     public List<User> getUserInfoByName(String username){
-        return dao.getUserInfoByName(username);
+        System.out.println("--------------进入了userService--------------");
+        return null;
+        //return dao.getUserInfoByName(username);
     }
-
-    public IUserDAO getDao(){
+    /*
+    public IUserMapper getDao(){
         return dao;
     }
 
-    public void setDao(IUserDAO dao){
+    public void setDao(IUserMapper dao){
         this.dao = dao;
     }
 
@@ -28,7 +31,7 @@ public class UserService implements IUserService{
 
     private static void getUserInfo() {
         SqlSession session = DBTools.getSession();
-        IUserDAO userDAO = session.getMapper(IUserDAO.class);
+        IUserMapper userDAO = session.getMapper(IUserMapper.class);
         try {
             List<String> ttt = userDAO.getUserInfo();
             for(String t : ttt){
@@ -42,4 +45,5 @@ public class UserService implements IUserService{
         }
 
     }
+    */
 }

@@ -1,4 +1,4 @@
-package milCheck.user.pojo;
+package com.milCheck.model;
 
 import java.io.Serializable;
 

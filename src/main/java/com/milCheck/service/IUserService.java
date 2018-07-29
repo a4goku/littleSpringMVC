@@ -1,6 +1,6 @@
-package milCheck.user.service;
+package com.milCheck.service;
 
-import milCheck.user.pojo.User;
+import com.milCheck.model.User;
 
 import java.util.List;
 

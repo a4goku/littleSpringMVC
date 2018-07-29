@@ -1,24 +1,16 @@
-package milCheck.user.controller;
+package com.milCheck.controller;
 
-import milCheck.user.service.IUserService;
+import com.milCheck.service.IUserService;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@Controller
 public class UserController {
-    private IUserService service;
-
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response){
         ModelAndView mav = null;
         return mav;
-    }
-
-    public  IUserService getService(){
-        return service;
-    }
-
-    public void setService(IUserService service) {
-        this.service = service;
     }
 }

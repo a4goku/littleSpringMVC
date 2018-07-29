@@ -1,4 +1,4 @@
-package milCheck.utils;
+package com.milCheck.utils;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
