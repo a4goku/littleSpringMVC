@@ -7,11 +7,7 @@ public class User {
     private String userNo;
     private String password;
 
-    public User(String userName, String password, String userNo){
-        this.userName = userName;
-        this.password = password;
-        this.userName = userName;
-    }
+    public User(){}
 
     public String getUserName() {
         return userName;

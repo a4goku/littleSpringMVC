@@ -2,10 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.milCheck.dao.IUserMapper">
+
+
     <select id="getUserInfo" resultType="java.lang.String">
         select t1.username from userinfo t1;
     </select>
     <select id="getUserInfoByName" resultType="com.milCheck.model.User">
-        select * from userinfo;
+        select * from userinfo t1
+        where
+        t1.username = #{username};
     </select>
 </mapper>

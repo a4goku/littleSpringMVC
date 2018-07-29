@@ -1,18 +1,25 @@
 package com.milCheck.service;
 
+import com.milCheck.dao.IUserMapper;
 import com.milCheck.model.User;
 import com.milCheck.utils.DBTools;
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service("userService")
 public class UserService implements IUserService{
-    //private IUserMapper dao;
+    @Autowired
+    private IUserMapper userMapper;
 
     public List<User> getUserInfoByName(String username){
-        System.out.println("--------------进入了userService--------------");
+        List<User> userList = userMapper.getUserInfoByName(username);
+        for (User user : userList){
+            System.out.println(user.getPassword());
+        }
+
         return null;
         //return dao.getUserInfoByName(username);
     }
