@@ -2,6 +2,10 @@ package milCheck.user.dao;
 
 import milCheck.user.pojo.User;
 
+import java.util.List;
+
 public interface IUserDAO {
-    public User getUserInfoByName(String username);
+    public List<String> getUserInfo();
+
+    public List<User> getUserInfoByName(String username);
 }

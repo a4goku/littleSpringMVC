@@ -1,9 +1,17 @@
 package milCheck.user.pojo;
 
+import java.io.Serializable;
+
 public class User {
     private String userName;
     private String userNo;
     private String password;
+
+    public User(String userName, String password, String userNo){
+        this.userName = userName;
+        this.password = password;
+        this.userName = userName;
+    }
 
     public String getUserName() {
         return userName;
