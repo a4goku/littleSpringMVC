@@ -16,7 +16,7 @@
 <body>
 <div>
     <div class="jumbotron text-info bg-light jumheight1">
-        <h1>工时管理系统</h1>
+        <h1>springMVC</h1>
     </div>
     <!-- 轮播图 -->
     <!-- 指示符 -->
