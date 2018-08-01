@@ -97,7 +97,7 @@
 <script>
     function Toregister(){
         var th = document.form2;
-        th.action = "<%=path%>/loginProcess";
+        th.action = "<%=path%>/login/loginProcess";
         th.submit;
     }
 </script>
