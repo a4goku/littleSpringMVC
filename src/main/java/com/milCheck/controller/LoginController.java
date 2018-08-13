@@ -23,7 +23,7 @@ public class LoginController {
         String userName = request.getParameter("username");
         String passWord = request.getParameter("password");
 
-        userService.getUserInfoByName(userName);
+        //userService.getUserInfoByName(userName);
         mav.setViewName("index");
         return mav;
     }

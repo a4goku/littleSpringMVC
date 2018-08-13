@@ -91,14 +91,37 @@
         </div>
     </div>
     <div class="jumbotron bg-light jumheight2">
-        <p class="footer2">@Master_huangyx</p>
+        <button type="button" class="btn btn-link" onclick="postMsg()"><small>发送</small></button>
+        <!--<p class="footer2">@Master_huangyx</p>-->
     </div>
 </div>
+
 <script>
     function Toregister(){
         var th = document.form2;
         th.action = "<%=path%>/login/loginProcess";
         th.submit;
+
+    }
+
+    var obj = {
+        msg: 'this is come from client message!'
+    }
+
+    function postMsg (){
+        var connected = false;
+        var domain = 'http://127.0.0.1:8090/pqr/pages/query/home/home.html';
+        var uniqueInfo = new Date().getTime().toString();
+        var url = domain
+            + '?sys=020&id=0615003b26a8412bb906a436cac7922b&' +
+            'button=0&param=0&print=0&uniqueInfo=' + uniqueInfo;
+
+        var openWindow = window.open(url, uniqueInfo);
+        setTimeout(function() {
+            var message = {uniqueInfo: uniqueInfo, type: 0};
+            // 当前窗口向目标源传数据
+            openWindow.postMessage(message, domain);
+        }, 1000);
     }
 </script>
 </body>
